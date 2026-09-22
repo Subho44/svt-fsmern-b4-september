@@ -35,4 +35,16 @@ const adminOnly = (req, res, next) => {
   next();
 };
 
-module.exports = { auth, adminOnly };
+//normal user only
+
+const userOnly = (req, res, next) => {
+  if (!req.user || req.user.role !== "user") {
+    return res.status(403).json({
+      success: false,
+      message: "User access only"
+    });
+  }
+
+  next();
+};
+module.exports = { auth, adminOnly,userOnly };

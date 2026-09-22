@@ -6,6 +6,8 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const courseRoutes = require("./routes/courseroutes");
 const authRoutes = require("./routes/authroutes");
+const paymentroutes = require("./routes/paymentroutes");
+
 const User = require("./models/User");
 const bcrypt = require("bcryptjs");
 
@@ -27,6 +29,7 @@ app.get("/", (req, res) => {
 // API routes
 app.use("/api/courses", courseRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/payment", paymentroutes);
 
 // Invalid route
 app.use((req, res) => {
