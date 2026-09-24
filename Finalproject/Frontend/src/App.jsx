@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Viewcourse from "./components/Viewcourse";
 import Verifyotp from "./components/Verifyotp";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Chatbot from "./components/Chatbot";
 
 const App = () => {
   return (
@@ -61,6 +62,15 @@ const App = () => {
           element={
             <ProtectedRoute adminOnly={true}>
               <Addcourse />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/chatbot"
+          element={
+            <ProtectedRoute>
+              <Chatbot />
             </ProtectedRoute>
           }
         />

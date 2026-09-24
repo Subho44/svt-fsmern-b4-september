@@ -7,6 +7,8 @@ const connectDB = require("./config/db");
 const courseRoutes = require("./routes/courseroutes");
 const authRoutes = require("./routes/authroutes");
 const paymentroutes = require("./routes/paymentroutes");
+const chatroutes = require("./routes/chatRoutes");
+
 
 const User = require("./models/User");
 const bcrypt = require("bcryptjs");
@@ -30,6 +32,7 @@ app.get("/", (req, res) => {
 app.use("/api/courses", courseRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/payment", paymentroutes);
+app.use("/api/chat", chatroutes);
 
 // Invalid route
 app.use((req, res) => {

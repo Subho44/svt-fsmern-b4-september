@@ -44,6 +44,9 @@ const Navbar = () => {
               <NavLink to="/about" className={navStyle}>
                 About
               </NavLink>
+              <NavLink to="/chatbot" className={navStyle}>
+                AI CHAT
+              </NavLink>
 
               <NavLink to="/view" className={navStyle}>
                 Courses
